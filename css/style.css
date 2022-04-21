@@ -1,0 +1,175 @@
+:root{
+    --card-bg: hsl(217, 19%, 24%);
+    --body-bg:hsl(217, 19%, 38%);
+    --light-cyan:hsl(193, 38%, 86%);
+    --neon-green:hsl(150, 100%, 66%);
+    --dark-blue:hsl(218, 23%, 16%);
+}
+
+html{
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+img{
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+body{
+
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Manrope', sans-serif;
+    background-color:var(--dark-blue) ;
+}
+
+.card{
+    width: 90%;
+    border-radius: 0.8rem;
+    background-color:var(--card-bg) ;
+    height: 20rem;
+    text-align: center;
+    padding: 2.25rem 1rem 1rem 1rem ;
+
+    display: flex;
+    align-items: center;
+    
+    flex-direction: column;
+
+    position: relative;
+
+}
+.card h1{
+
+    font-size: 0.65rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    color: var(--neon-green);
+
+}
+
+img[data-desktop-pattern]{
+    display: none;
+}
+
+img[data-mobile-pattern]{
+    width: 95%;
+    margin-bottom: 1.5rem;
+}
+
+button{
+   display: block;
+    background-color: var(--neon-green);
+    width: 4rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: none;
+   
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+
+    transform: translate(-50%,50%);
+
+    transition: box-shadow 0.25s ease-in;
+
+
+}
+
+button img{
+    animation-play-state: paused;
+}
+
+
+@keyframes spin{
+    100% { transform: rotate(360deg) }
+}
+
+button:hover,
+button:active{
+    box-shadow:  var(--neon-green) 0rem 0rem 2rem 0.25rem;
+   
+}
+
+blockquote.advice{
+    font-weight: 800;
+    color: var(--light-cyan);
+    font-size: 24px;
+    margin: 0;
+
+}
+
+blockquote p{
+    margin: 1rem 0 1.25rem 0;
+}
+
+
+@media only screen and (min-width: 600px)and (max-width: 999px){
+
+    .card{
+        width: 80%;
+    }
+
+    blockquote.advice{
+        width: 85%;
+    }
+
+    img[data-mobile-pattern]{
+        width: 75%;
+        align-self: center;
+        padding-top: 2rem;
+    }
+
+}@media only screen and (min-width: 1000px){
+
+    .card{
+        width: 38%;
+        height: 20rem;
+    }
+
+    img[data-mobile-pattern]{
+        display: none;
+        
+    }
+    img[data-desktop-pattern]{
+        display: inline-block;
+        margin-top: 2rem;
+    }
+
+
+    blockquote.advice{
+        width: 85%;
+        font-size: 28px;
+    }
+
+    .card h1{
+
+        font-size: 0.85rem;
+        
+        letter-spacing: 0.2rem;
+       
+    
+    }
+
+}
+
+
+
+
+
+
